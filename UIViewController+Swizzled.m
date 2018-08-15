@@ -60,13 +60,13 @@ static void swizzInstance(Class class, SEL originalSelector, SEL swizzledSelecto
     {
         [self logWithLevel:0];
     }
-    else if([[self parentViewController] isMemberOfClass:[UINavigationController class]])
+    else if([[self parentViewController] isKindOfClass:[UINavigationController class]])
     {
         UINavigationController *nav = (UINavigationController *)[self parentViewController];
         NSInteger integer = [[nav viewControllers] indexOfObject:self];
         [self logWithLevel:integer];
     }
-    else if ([[self parentViewController] isMemberOfClass:[UITabBarController class]])
+    else if ([[self parentViewController] isKindOfClass:[UITabBarController class]])
     {
         [self logWithLevel:1];
     }
